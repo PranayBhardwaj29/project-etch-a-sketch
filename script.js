@@ -17,7 +17,6 @@ button.addEventListener("click", function () {
     return;
   } else {
     container.innerHTML = "";
-    console.log("Cleared");
     for (let index = 0; index < squares * squares; index++) {
       const newDiv = document.createElement("div");
       newDiv.className = "squareGrid";
@@ -30,4 +29,12 @@ button.addEventListener("click", function () {
       container.appendChild(newDiv);
     }
   }
+});
+
+const clearButton = document.querySelector("#clearGrid");
+clearButton.addEventListener("click", function () {
+  const squares = document.querySelectorAll(".squareGrid");
+  squares.forEach(square => {
+    square.style.backgroundColor = "#0B1D2A";
+  });
 });
